@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function shootArrow() {
         arrow.classList.add("animate-arrow");
+        
+        setTimeout(() => {
+            heart.classList.add("scale-heart");
+            arrow.classList.add("scale-arrow");
+        }, 1000);
+
         heart.removeEventListener("click", shootArrow);
     }
 

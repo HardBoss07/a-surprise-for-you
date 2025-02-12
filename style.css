@@ -4,6 +4,8 @@
 
     --arrow-size: 200px;
     --arrow-rotation: 40deg;
+
+    --heart-scale: 7;
 }
 
 body {
@@ -23,6 +25,8 @@ body {
     position: relative;
     transform: rotate(-45deg);
     box-shadow: -10px 10px 90px #f20044;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 1px;
 }
 
 .heart:before {
@@ -45,6 +49,7 @@ body {
     right: -60%;
     border-radius: var(--heart-border-radius);
     box-shadow: 10px 10px 90px #f20044;
+    transition: transform 0.5s ease-in-out;
 }
 
 .arrow {
@@ -68,6 +73,8 @@ body {
 
     transform: translate(100vw, 60vh) rotate(var(--arrow-rotation));
     opacity: 0;
+
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.7));
 }
 
 .animate-arrow {
@@ -84,4 +91,18 @@ body {
         transform: translate(-50%, -45%) rotate(var(--arrow-rotation));
         opacity: 1;
     }
+}
+
+@keyframes scale-heart {
+    0% {
+        transform: rotate(-45deg) scale(1);
+    }
+    100% {
+        transform: rotate(-45deg) scale(var(--heart-scale));
+    }
+}
+
+.scale-heart {
+    animation: scale-heart 1s ease-in-out forwards;
+    animation-delay: 1s;
 }
