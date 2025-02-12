@@ -9,6 +9,12 @@
     --paper-size: 80px;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --heart-scale: 4;
+    }
+}
+
 body {
     margin: 5%;
     padding: 0;
