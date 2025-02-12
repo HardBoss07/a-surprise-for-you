@@ -48,8 +48,7 @@ body {
 }
 
 .arrow {
-    position: relative;
-
+    position: absolute;
     width: 250px;
     height: 180px;
     background-color: gold;
@@ -66,9 +65,14 @@ body {
         68.01% 6.336%, 74.186% 0.214%, 75.844% 1.857%, 70.363% 7.296%,
         70.352% 7.503%
     );
-    
-    transform: rotate(var(--arrow-rotation));
+
+    transform: translate(100vw, 60vh) rotate(var(--arrow-rotation));
+    opacity: 0;
+}
+
+.animate-arrow {
     animation: shoot-arrow 1s ease-out forwards;
+    opacity: 1;
 }
 
 @keyframes shoot-arrow {
